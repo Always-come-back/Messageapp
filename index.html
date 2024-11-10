@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohbet Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginScreen" class="screen">
+        <div class="form-container">
+            <h2>Kullanıcı Kaydı</h2>
+            <input type="text" id="username" placeholder="Kullanıcı Adı">
+            <input type="email" id="email" placeholder="E-posta">
+            <button onclick="registerUser()">Kayıt Ol</button>
+        </div>
+    </div>
+
+    <div id="userSelectScreen" class="screen hidden">
+        <div class="form-container">
+            <h2>Sohbet Edilecek Kullanıcı</h2>
+            <select id="userList">
+                <option value="">Kullanıcı Seçin</option>
+            </select>
+            <button onclick="startChat()">Sohbete Başla</button>
+        </div>
+    </div>
+
+    <div id="chatScreen" class="screen hidden">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Sohbet - <span id="chatWith"></span></h2>
+                <button onclick="backToUserSelect()" class="back-button">Geri</button>
+            </div>
+            <div class="chat-messages" id="messageArea"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Mesajınızı yazın...">
+                <button onclick="sendMessage()">Gönder</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
